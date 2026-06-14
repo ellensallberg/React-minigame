@@ -1,0 +1,185 @@
+/* frame */
+.hero{
+    height: 100vh;
+    background-image: url(./assets/gameBackgrund.webp);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Inconsolata", monospace;
+    font-style: normal;
+    
+
+}
+/* sidebar */
+.sidebar {
+    margin: 20px;
+    background-color: #2A2A2A;
+    height: 430px;
+    max-width: 235px;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameTitle {
+    font-size: 32px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    background-color: #E99B2E;
+    height: 110px;
+    width: 230px;
+    align-content: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.gameTitleSecond {
+    font-size: 26px;
+}
+
+.scoreContainer {
+    height: 134px;
+    width: 230px;
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.scoreNumberContainer {
+    height: 90px;
+    width: 210px;
+    background-color: #F6533E;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    box-shadow: 5px 5px 10px black;
+}
+
+/* card and button container */
+.game {
+    
+}
+
+/* ID card */
+.idCard {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    height: 333px;
+    width: 550px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.avatar {
+    height: 244px;
+    width: 179px;
+}
+
+.idCardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+}
+
+.infoTitle {
+    font-size: 20px;
+}
+
+.infoInfo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.guessInput {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+/* Results */
+.resultsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.resultsTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.resultPoints {
+    color: #F6533E;
+}
+
+/* next round btn */
+.nextRoundBtn {
+    margin: 20px;
+    padding: 20px;
+    width: 100px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: none;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #F6533E;
+}
+
+.nextRoundBtn:hover {
+    background-color: #2E9BE9;
+}
+
+/* submit Button */
+.submitBtn {
+    margin: 20px;
+    padding: 20px;
+    width: 590px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 10px black;
+
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #E99B2E;
+    color: white;
+}
+
+.submitBtn:hover {
+    background-color: #2E9BE9;
+}
+

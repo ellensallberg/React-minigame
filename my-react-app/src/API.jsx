@@ -4,7 +4,7 @@ import Countries from "./components/countries"
 
 function API() {
 
-
+    // fetch api data
     const getAge = async (name, countryCode) => {
         console.log("Fetching:", name, countryCode);
         const response = await fetch(
@@ -20,6 +20,7 @@ function API() {
     const [result, setResult] = useState(null)
     const [score, setScore] = useState(0)
 
+    // load round
     const loadRound = async () => {
         const randomName =
         Names[Math.floor(Math.random() * Names.length)]
@@ -54,10 +55,12 @@ function API() {
         );
 
         let points = 1;
-
-        if (difference = 0) points = 10;
-        else if (difference <= 5) points = 7;
-        else if (difference <= 10) points = 5;
+//FIX!!!
+        if (difference === 0) points = 10;
+        else if (difference <= 3) points = 8;
+        else if (difference <= 6) points = 4;
+        else if (difference <= 10) points = 2;
+        else if (difference <= 15) points = 0;
 
         setScore((prev) => prev + points);
 
@@ -70,36 +73,70 @@ function API() {
 
 
     return(
-        <div>
-            <h1>Match the age</h1>
-            <input
-                type="number"
-                value={guess}
-                onChange={(e) => setGuess(e.target.value)}
-            />
-
-            <button onClick={submitGuess}>Submit Guess</button>
-            {result && (
-                <div>
-                    <h3>Results</h3>
-
-                    <p>Actual age: {result.actualAge}</p>
-
-                    <p>Difference: {result.difference}</p>
-
-                    <p>Points earned: {result.points}</p>
-
-                    <button onClick={loadRound}>
-                    Next Round
-                    </button>
+        <div className="hero">
+            {/* sidebar */}
+            <div className="sidebar">
+                <h1 className="gameTitle">Age stereotyping <span className="gameTitleSecond">(at work)</span></h1>
+                <div className="scoreContainer">
+                    <h2 className="scoreTitle">SCORE</h2>
+                    <div className="scoreNumberContainer">
+                        <p className="scoreNumber">{score}</p>
+                    </div>
                 </div>
-            )}
-            {currentRound && (
-            <>
-            <h2>Name: {currentRound.name}</h2>
-            <h3>Country: {currentRound.country}</h3>
-            </>
-            )}
+            </div>
+
+            <div className="game">
+                {/* ID card */}
+                <div className="idCard">
+                    <img className="avatar" src="./src/assets/avatar.png" alt="" />
+                    {/* Base card info */}
+                    <div className="idCardInfo">
+                        {currentRound && (
+                        <div className="baseInfo">
+                            <div className="infoSection">
+                                <h2 className="infoTitle">Name</h2>
+                                <p className="infoInfo">{currentRound.name}</p>
+                            </div>
+
+                            <div className="infoSection">
+                                <h2 className="infoTitle">Nationality</h2>
+                                <p className="infoInfo">{currentRound.country}</p>
+                            </div>
+                        </div>
+                        )}
+
+                        {/* guess input */}
+                        <div className="infoSection">
+                            <h4 className="infoTitle">Age</h4>
+                            <input
+                                className="guessInput"
+                                placeholder="?"
+                                type="number"
+                                value={guess}
+                                onChange={(e) => setGuess(e.target.value)}
+                            />
+                        </div>
+                        
+                        {/* Results */}
+                        {result && (
+                            <div className="resultsContainer"> 
+                                <div>
+                                    <h4 className="resultsTitle">Accuracy</h4>
+
+                                    <p className="resultsInfo">Actual age: {result.actualAge}</p>
+
+                                    <p className="resultsInfo">Difference: {result.difference}</p>
+
+                                    <p className="resultsInfo">Points earned: <span className="resultPoints"> +{result.points}</span></p>
+                                </div>
+                                <button onClick={loadRound} className="nextRoundBtn">Next Round</button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <button onClick={submitGuess} className="submitBtn">SUBMIT IDENTIFICATION CARD</button>
+            </div>
         </div>
         
     )

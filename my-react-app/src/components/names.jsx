@@ -1,7 +1,18 @@
 
 const Names = [
     "Johan",
-    "Britta",
+    "Johanna",
+    "Mike",
+    "Ellen",
+    "Villhelm",
+    "Matilda",
+    "Eric",
+    "Maja",
+    "Michael",
+    "Michelle",
+    "Anna",
+    "Philip",
+    "Sofia",
 ]
 
 export default Names
