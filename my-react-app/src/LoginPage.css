@@ -1,0 +1,50 @@
+.lp{
+    height: 100vh;
+    background-image: url(./assets/gameBackgrund.webp);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Inconsolata", monospace;
+    font-style: normal;
+}
+
+.lpTitle {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.input {
+    height: 20px;
+    width: 170px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: solid 1px black;
+    box-shadow: 2px 2px 5px black;
+}
+
+.loginBtn {
+    height: 30px;
+    width: 80px;
+    margin: 5px;
+    background-color: #E99B2E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.signupBtn {
+    height: 30px;
+    width: 80px;
+    margin: 10px;
+    background-color: #E99B2E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+}

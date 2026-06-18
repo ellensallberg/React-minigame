@@ -71,7 +71,7 @@ function API() {
         });
     };
 
-    const [showRules, setShowRules] = useState(false)
+    const [showRules, setShowRules] = useState(true)
 
     const toggleRules = () => {
         setShowRules(prev => !prev)
