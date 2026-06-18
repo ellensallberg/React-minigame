@@ -54,13 +54,13 @@ function API() {
             Number(guess) - currentRound.actualAge
         );
 
-        let points = 1;
-//FIX!!!
+        let points = 0;
+
         if (difference === 0) points = 10;
         else if (difference <= 3) points = 8;
         else if (difference <= 6) points = 4;
         else if (difference <= 10) points = 2;
-        else if (difference <= 15) points = 0;
+        else if (difference <= 15) points = 1;
 
         setScore((prev) => prev + points);
 
@@ -71,6 +71,11 @@ function API() {
         });
     };
 
+    const [showRules, setShowRules] = useState(false)
+
+    const toggleRules = () => {
+        setShowRules(prev => !prev)
+    }
 
     return(
         <div className="hero">
@@ -83,6 +88,7 @@ function API() {
                         <p className="scoreNumber">{score}</p>
                     </div>
                 </div>
+                <button className="infoBtn" onClick={toggleRules}><i class="fa-solid fa-book"></i></button>
             </div>
 
             <div className="game">
@@ -137,6 +143,32 @@ function API() {
 
                 <button onClick={submitGuess} className="submitBtn">SUBMIT IDENTIFICATION CARD</button>
             </div>
+            
+            {showRules && (
+            <div className="rulesContainer">
+                <h2 className="rulesTitle">Hello valued colleague,</h2>
+                <p className="rulesText">Due to an unexpected data‑optimization event,
+                     several employee ages have gone missing. As part of our commitment to Continuous Improvement
+                     and Confident Guesswork, your task is to estimate each person’s
+                     age using only their<span className="boldTxt"> first name</span> and <span className="boldTxt">nationality</span>.
+                     <br /> <br />
+                     Your goal is to <span className="boldTxt">match the average age </span>for that name–country combo as
+                     closely as possible. Performance is evaluated using our 
+                     state‑of‑the‑art <span className="boldTxt"> Precision Guessing Score™</span>:
+                     </p>
+
+                     <ul className="rulesPointList">
+                        <li>Exact match - 10 points</li>
+                        <li>Off by ≤3 years - 8 points</li>
+                        <li>Off by ≤6 years - 4 points</li>
+                        <li>Off by ≤10 years - 2 points</li>
+                        <li>Off by ≤15 years - 1 point</li>
+                     </ul>
+
+                     <p className="rulesText">Thank you for supporting our mission of <span className="boldTxt">Data Integrity Through Vibes</span>.</p>
+                <button onClick={toggleRules} className="rulesCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            )}
         </div>
         
     )
